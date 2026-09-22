@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Discord Link - Tham Gia Ngay</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+  }
+
+  body {
+    min-height: 100vh;
+    background: #0a0a0a;
+    background-image: 
+      radial-gradient(circle at 20% 30%, rgba(255, 20, 147, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(255, 105, 180, 0.12) 0%, transparent 50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Hiệu ứng ánh sáng hồng nền */
+  body::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255, 20, 147, 0.25), transparent 70%);
+    border-radius: 50%;
+    top: -200px;
+    right: -200px;
+    animation: float 8s ease-in-out infinite;
+  }
+
+  body::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 105, 180, 0.2), transparent 70%);
+    border-radius: 50%;
+    bottom: -150px;
+    left: -150px;
+    animation: float 10s ease-in-out infinite reverse;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(30px, -30px); }
+  }
+
+  .container {
+    background: rgba(15, 15, 15, 0.85);
+    backdrop-filter: blur(20px);
+    border: 2px solid rgba(255, 20, 147, 0.4);
+    border-radius: 24px;
+    padding: 45px 35px;
+    width: 100%;
+    max-width: 480px;
+    text-align: center;
+    box-shadow: 
+      0 0 40px rgba(255, 20, 147, 0.3),
+      0 0 80px rgba(255, 20, 147, 0.15),
+      inset 0 0 30px rgba(255, 20, 147, 0.05);
+    position: relative;
+    z-index: 1;
+    animation: fadeIn 0.8s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Logo Discord */
+  .discord-logo {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, #ff1493, #ff69b4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 30px rgba(255, 20, 147, 0.6);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 30px rgba(255, 20, 147, 0.6); }
+    50% { transform: scale(1.05); box-shadow: 0 0 45px rgba(255, 20, 147, 0.9); }
+  }
+
+  .discord-logo svg {
+    width: 55px;
+    height: 55px;
+    fill: #fff;
+  }
+
+  h1 {
+    color: #fff;
+    font-size: 26px;
+    margin-bottom: 8px;
+    text-shadow: 0 0 15px rgba(255, 20, 147, 0.8);
+    letter-spacing: 1px;
+  }
+
+  h1 span {
+    background: linear-gradient(90deg, #ff1493, #ff69b4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .subtitle {
+    color: #b0b0b0;
+    font-size: 14px;
+    margin-bottom: 30px;
+    letter-spacing: 0.5px;
+  }
+
+  .btn {
+    display: block;
+    width: 100%;
+    padding: 16px 24px;
+    border: none;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #ff1493, #ff69b4);
+    color: #fff;
+    box-shadow: 0 6px 25px rgba(255, 20, 147, 0.5);
+    margin-bottom: 15px;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 35px rgba(255, 20, 147, 0.8);
+    background: linear-gradient(135deg, #ff69b4, #ff1493);
+  }
+
+  .btn-primary:active {
+    transform: translateY(-1px);
+  }
+
+  .btn-backup {
+    background: transparent;
+    color: #ff69b4;
+    border: 2px solid #ff1493;
+    box-shadow: 0 0 15px rgba(255, 20, 147, 0.2);
+  }
+
+  .btn-backup:hover {
+    background: rgba(255, 20, 147, 0.15);
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(255, 20, 147, 0.6);
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    margin: 25px 0;
+    color: #666;
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+
+  .divider::before,
+  .divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #ff1493, transparent);
+  }
+
+  .divider span {
+    padding: 0 15px;
+    color: #ff69b4;
+  }
+
+  .status {
+    margin-top: 25px;
+    font-size: 12px;
+    color: #888;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    background: #00ff88;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00ff88;
+    animation: blink 1.5s ease-in-out infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .btn-icon {
+    display: inline-block;
+    margin-right: 8px;
+    font-size: 18px;
+    vertical-align: middle;
+  }
+
+  /* Responsive */
+  @media (max-width: 480px) {
+    .container {
+      padding: 35px 22px;
+      border-radius: 20px;
+    }
+    h1 { font-size: 22px; }
+    .discord-logo { width: 75px; height: 75px; }
+    .discord-logo svg { width: 45px; height: 45px; }
+    .btn { padding: 14px 18px; font-size: 15px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Logo Discord -->
+  <div class="discord-logo">
+    <svg viewBox="0 0 127.14 96.36" xmlns="http://www.w3.org/2000/svg">
+      <path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"/>
+    </svg>
+  </div>
+
+  <h1>Tham Gia <span>Discord</span></h1>
+  <p class="subtitle">✦ Kết nối cộng đồng ngay hôm nay ✦</p>
+
+  <!-- Nút link chính -->
+  <a href="https://phienchoso.com/9b24774bbce946e42b1c.tk" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     class="btn btn-primary"
+     onclick="handleMainClick(event)">
+    <span class="btn-icon">🎮</span> VÀO DISCORD CHÍNH
+  </a>
+
+  <div class="divider"><span>HOẶC</span></div>
+
+  <!-- Nút link dự phòng -->
+  <a href="https://sitetop.one/GtJsnq" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     class="btn btn-backup">
+    <span class="btn-icon">🔗</span> LINK DỰ PHÒNG (Khi Lỗi)
+  </a>
+
+  <div class="status">
+    <span class="status-dot"></span>
+    <span>Hệ thống đang hoạt động</span>
+  </div>
+</div>
+
+<script>
+  // Xử lý khi click link chính - kiểm tra lỗi và tự động chuyển sang link dự phòng
+  function handleMainClick(event) {
+    const mainUrl = "https://phienchoso.com/9b24774bbce946e42b1c.tk";
+    const backupUrl = "https://sitetop.one/GtJsnq";
+
+    // Kiểm tra kết nối mạng
+    if (!navigator.onLine) {
+      event.preventDefault();
+      alert("⚠️ Không có kết nối mạng!\nĐang chuyển sang link dự phòng...");
+      window.location.href = backupUrl;
+      return;
+    }
+
+    // Thử kiểm tra URL có phản hồi không (timeout 3s)
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 3000);
+
+    fetch(mainUrl, { mode: 'no-cors', signal: controller.signal })
+      .then(() => {
+        clearTimeout(timeoutId);
+        // Link chính OK - cho phép mở bình thường
+      })
+      .catch(() => {
+        clearTimeout(timeoutId);
+        event.preventDefault();
+        // Link chính lỗi - chuyển sang dự phòng
+        const confirmBackup = confirm(
+          "❌ Link chính đang gặp sự cố!\n\n👉 Bạn có muốn chuyển sang LINK DỰ PHÒNG không?"
+        );
+        if (confirmBackup) {
+          window.open(backupUrl, '_blank');
+        }
+      });
+  }
+
+  // Thông báo khi mất kết nối
+  window.addEventListener('offline', () => {
+    document.querySelector('.status span:last-child').textContent = 'Mất kết nối mạng';
+    document.querySelector('.status-dot').style.background = '#ff3333';
+    document.querySelector('.status-dot').style.boxShadow = '0 0 10px #ff3333';
+  });
+
+  window.addEventListener('online', () => {
+    document.querySelector('.status span:last-child').textContent = 'Hệ thống đang hoạt động';
+    document.querySelector('.status-dot').style.background = '#00ff88';
+    document.querySelector('.status-dot').style.boxShadow = '0 0 10px #00ff88';
+  });
+</script>
+
+</body>
+    </html>
