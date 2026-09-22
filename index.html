@@ -41,7 +41,7 @@
   .card {
     position: relative;
     width: 100%;
-    max-width: 460px;
+    max-width: 480px;
     background: rgba(18, 18, 18, .92);
     border: 1px solid rgba(255, 45, 149, .45);
     border-radius: 20px;
@@ -205,13 +205,13 @@
     transition: .25s;
     position: relative;
     overflow: hidden;
+    margin-bottom: 8px;
   }
 
   .btn-main {
     background: linear-gradient(135deg, #ff2d95, #b3005f);
     color: #fff;
     box-shadow: 0 8px 26px rgba(255, 45, 149, .45);
-    margin-bottom: 18px;
     animation: pulse 2.4s infinite;
   }
 
@@ -241,14 +241,29 @@
     transform: translateY(-2px);
   }
 
+  /* Nút key */
+  .btn-key {
+    background: transparent;
+    color: #ffd9ec;
+    border: 1.5px solid rgba(255, 45, 149, .55);
+  }
+
+  .btn-key:hover {
+    background: rgba(255, 45, 149, .12);
+    border-color: #ff2d95;
+    box-shadow: 0 0 20px rgba(255, 45, 149, .35);
+    transform: translateY(-2px);
+  }
+
   .divider {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin: 6px 0 18px;
+    margin: 18px 0 14px;
     color: #5c5057;
     font-size: 11px;
     letter-spacing: 1.5px;
+    text-transform: uppercase;
   }
 
   .divider::before,
@@ -300,39 +315,54 @@
     <div class="badge"><span class="dot"></span>System Online</div>
 
     <h1>HACK TOOL <span>BYPASS</span></h1>
-    <p class="sub">Nhấn vào link bên dưới để truy cập công cụ.</p>
+    <p class="sub">Chọn link bên dưới để truy cập công cụ.</p>
 
-    <span class="label">🔗 Link chính</span>
+    <!-- LINK CHÍNH -->
+    <span class="label">🔗 Link chính hacker</span>
     <div class="link-box">
       <input id="mainLink" type="text" readonly
              value="https://phienchoso.com/9b24774bbce946e42b1c.tk">
       <button class="copy-btn" onclick="copyLink('mainLink', this)">COPY</button>
     </div>
-
     <a class="btn btn-main"
        href="https://phienchoso.com/9b24774bbce946e42b1c.tk"
        target="_blank" rel="noopener">
       ⚡ TRUY CẬP LINK CHÍNH
     </a>
 
+    <!-- DỰ PHÒNG -->
     <div class="divider">DỰ PHÒNG</div>
 
-    <span class="label">🛡️ Link dự phòng (khi link chính lỗi)</span>
+    <span class="label">🛡️ Link dự phòng khi lỗi</span>
     <div class="link-box">
       <input id="backupLink" type="text" readonly
-             value="https://sitetop.one/GtJsnq">
+             value="https://sitetop.one/dOKXt8">
       <button class="copy-btn" onclick="copyLink('backupLink', this)">COPY</button>
     </div>
-
     <a class="btn btn-backup"
-       href="https://sitetop.one/GtJsnq"
+       href="https://sitetop.one/dOKXt8"
        target="_blank" rel="noopener">
       🔄 TRUY CẬP LINK DỰ PHÒNG
     </a>
 
+    <!-- LẤY KEY -->
+    <div class="divider">KEY</div>
+
+    <span class="label">🔑 Lấy key</span>
+    <div class="link-box">
+      <input id="keyLink" type="text" readonly
+             value="https://no1share.com/s/kfwudg7n">
+      <button class="copy-btn" onclick="copyLink('keyLink', this)">COPY</button>
+    </div>
+    <a class="btn btn-key"
+       href="https://no1share.com/s/kfwudg7n"
+       target="_blank" rel="noopener">
+      🔑 LẤY KEY
+    </a>
+
     <p class="note">
       Nếu link chính không mở được, hãy dùng <b>link dự phòng</b>.<br>
-      Hãy copy link và dán vào trình duyệt nếu cần.
+      Copy link và dán vào trình duyệt nếu cần.
     </p>
   </div>
 
