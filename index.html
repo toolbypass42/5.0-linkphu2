@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HACK TOOL BYPASS</title>
+<title>HACKER LINK - PINK & BLACK</title>
 <style>
   * {
     margin: 0;
@@ -14,401 +14,269 @@
 
   body {
     min-height: 100vh;
-    background: #0a0a0a;
-    background-image:
-      radial-gradient(circle at 20% 20%, rgba(255, 45, 149, .18), transparent 45%),
-      radial-gradient(circle at 80% 80%, rgba(255, 45, 149, .12), transparent 45%),
-      linear-gradient(180deg, #0a0a0a 0%, #120009 100%);
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Hiệu ứng nền phát sáng hồng */
+  body::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, #ff1493 0%, transparent 70%);
+    top: -200px;
+    left: -200px;
+    opacity: 0.4;
+    filter: blur(60px);
+    animation: float 6s ease-in-out infinite;
+  }
+
+  body::after {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, #ff69b4 0%, transparent 70%);
+    bottom: -200px;
+    right: -200px;
+    opacity: 0.4;
+    filter: blur(60px);
+    animation: float 8s ease-in-out infinite reverse;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(30px, 30px); }
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+    background: rgba(10, 10, 10, 0.85);
+    border: 2px solid #ff1493;
+    border-radius: 20px;
+    padding: 40px 30px;
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 
+      0 0 20px #ff1493,
+      0 0 40px rgba(255, 20, 147, 0.5),
+      inset 0 0 20px rgba(255, 20, 147, 0.1);
+    backdrop-filter: blur(10px);
+    animation: borderPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes borderPulse {
+    0%, 100% { 
+      box-shadow: 0 0 20px #ff1493, 0 0 40px rgba(255, 20, 147, 0.5), inset 0 0 20px rgba(255, 20, 147, 0.1);
+    }
+    50% { 
+      box-shadow: 0 0 30px #ff1493, 0 0 60px rgba(255, 20, 147, 0.8), inset 0 0 30px rgba(255, 20, 147, 0.2);
+    }
+  }
+
+  .logo {
+    font-size: 50px;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 0 15px #ff1493);
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+  }
+
+  h1 {
+    color: #ff1493;
+    font-size: 28px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    text-shadow: 0 0 10px #ff1493, 0 0 20px #ff1493;
+  }
+
+  .subtitle {
+    color: #ff69b4;
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    opacity: 0.8;
+  }
+
+  .link-box {
+    margin-bottom: 18px;
+    text-align: left;
+  }
+
+  .link-label {
+    color: #ff69b4;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    padding-left: 5px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 20px;
-    overflow-x: hidden;
+    gap: 8px;
   }
 
-  /* Hiệu ứng lưới nền */
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(255, 45, 149, .05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 45, 149, .05) 1px, transparent 1px);
-    background-size: 40px 40px;
-    pointer-events: none;
-  }
-
-  .card {
-    position: relative;
-    width: 100%;
-    max-width: 480px;
-    background: rgba(18, 18, 18, .92);
-    border: 1px solid rgba(255, 45, 149, .45);
-    border-radius: 20px;
-    padding: 34px 26px 30px;
-    box-shadow:
-      0 0 0 1px rgba(255, 45, 149, .08),
-      0 0 40px rgba(255, 45, 149, .28),
-      0 0 90px rgba(255, 45, 149, .12),
-      inset 0 1px 0 rgba(255, 255, 255, .05);
-    animation: floatIn .7s ease both;
-    z-index: 1;
-  }
-
-  @keyframes floatIn {
-    from { opacity: 0; transform: translateY(24px) scale(.97); }
-    to   { opacity: 1; transform: translateY(0) scale(1); }
-  }
-
-  /* Thanh trang trí trên cùng */
-  .card::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 12%;
-    width: 76%; height: 2px;
-    background: linear-gradient(90deg, transparent, #ff2d95, transparent);
-    border-radius: 2px;
-    box-shadow: 0 0 14px #ff2d95;
-  }
-
-  .badge {
-    display: inline-block;
-    font-size: 11px;
-    letter-spacing: 2px;
-    font-weight: 700;
-    color: #ff2d95;
-    border: 1px solid rgba(255, 45, 149, .5);
-    background: rgba(255, 45, 149, .08);
-    padding: 5px 12px;
-    border-radius: 999px;
-    margin-bottom: 16px;
-    text-transform: uppercase;
-  }
-
-  .badge .dot {
-    display: inline-block;
-    width: 7px; height: 7px;
-    background: #ff2d95;
+  .link-label::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: #ff1493;
     border-radius: 50%;
-    margin-right: 7px;
-    box-shadow: 0 0 10px #ff2d95;
-    animation: blink 1.2s infinite;
+    box-shadow: 0 0 8px #ff1493;
+    animation: blink 1s infinite;
   }
 
   @keyframes blink {
     0%, 100% { opacity: 1; }
-    50% { opacity: .25; }
+    50% { opacity: 0.3; }
   }
 
-  h1 {
-    font-size: 26px;
-    line-height: 1.25;
-    color: #fff;
-    letter-spacing: .5px;
-    margin-bottom: 8px;
-  }
-
-  h1 span {
-    color: #ff2d95;
-    text-shadow: 0 0 18px rgba(255, 45, 149, .8);
-  }
-
-  .sub {
-    font-size: 13px;
-    color: #9a8d95;
-    margin-bottom: 24px;
-  }
-
-  .label {
-    font-size: 11px;
-    letter-spacing: 1.6px;
-    text-transform: uppercase;
-    color: #ff7ac0;
-    font-weight: 700;
-    margin-bottom: 8px;
+  a.link-btn {
     display: block;
-  }
-
-  /* Ô hiển thị link */
-  .link-box {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: #0d0d0d;
-    border: 1px solid rgba(255, 45, 149, .35);
-    border-radius: 12px;
-    padding: 12px 14px;
-    margin-bottom: 14px;
-    transition: .25s;
-  }
-
-  .link-box:hover,
-  .link-box:focus-within {
-    border-color: #ff2d95;
-    box-shadow: 0 0 18px rgba(255, 45, 149, .35);
-  }
-
-  .link-box input {
-    flex: 1;
-    background: transparent;
-    border: none;
-    outline: none;
-    color: #ffd9ec;
-    font-size: 12.5px;
-    font-family: 'Courier New', monospace;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    cursor: text;
-  }
-
-  .copy-btn {
-    flex-shrink: 0;
-    background: rgba(255, 45, 149, .12);
-    border: 1px solid rgba(255, 45, 149, .45);
-    color: #ff2d95;
-    font-size: 11px;
-    font-weight: 700;
-    padding: 6px 10px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: .2s;
-  }
-
-  .copy-btn:hover {
-    background: #ff2d95;
-    color: #0a0a0a;
-    box-shadow: 0 0 16px rgba(255, 45, 149, .7);
-  }
-
-  .copy-btn.done {
-    background: #00e08a;
-    border-color: #00e08a;
-    color: #0a0a0a;
-  }
-
-  /* Nút chính */
-  .btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
     width: 100%;
-    padding: 15px 18px;
+    padding: 16px 20px;
+    background: linear-gradient(135deg, #1a0010 0%, #2d0018 100%);
+    border: 2px solid #ff1493;
     border-radius: 12px;
-    font-size: 15px;
-    font-weight: 800;
-    letter-spacing: .6px;
+    color: #fff;
     text-decoration: none;
-    cursor: pointer;
-    border: none;
-    transition: .25s;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-align: center;
     position: relative;
     overflow: hidden;
-    margin-bottom: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(255, 20, 147, 0.4);
+    word-break: break-all;
   }
 
-  .btn-main {
-    background: linear-gradient(135deg, #ff2d95, #b3005f);
+  a.link-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 20, 147, 0.4), transparent);
+    transition: left 0.5s ease;
+  }
+
+  a.link-btn:hover::before {
+    left: 100%;
+  }
+
+  a.link-btn:hover {
+    background: linear-gradient(135deg, #ff1493 0%, #ff69b4 100%);
+    color: #000;
+    box-shadow: 0 0 30px #ff1493, 0 0 60px rgba(255, 20, 147, 0.6);
+    transform: translateY(-3px);
+  }
+
+  a.link-btn:active {
+    transform: translateY(0);
+  }
+
+  .main-link {
+    border-color: #ff1493;
+    background: linear-gradient(135deg, #3d0020 0%, #ff1493 100%);
     color: #fff;
-    box-shadow: 0 8px 26px rgba(255, 45, 149, .45);
-    animation: pulse 2.4s infinite;
+    font-size: 15px;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
   }
 
-  @keyframes pulse {
-    0%, 100% { box-shadow: 0 8px 26px rgba(255, 45, 149, .40); }
-    50%      { box-shadow: 0 8px 38px rgba(255, 45, 149, .85); }
+  .main-link:hover {
+    color: #000;
   }
 
-  .btn-main:hover {
-    transform: translateY(-2px);
-    background: linear-gradient(135deg, #ff4fa6, #d10070);
+  .backup-link {
+    border-color: #ff69b4;
   }
 
-  .btn-main:active { transform: translateY(0) scale(.985); }
-
-  /* Nút dự phòng */
-  .btn-backup {
-    background: transparent;
-    color: #ff2d95;
-    border: 1.5px solid rgba(255, 45, 149, .55);
+  .key-link {
+    border-color: #ff69b4;
+    background: linear-gradient(135deg, #1a0010 0%, #3d0020 100%);
   }
 
-  .btn-backup:hover {
-    background: rgba(255, 45, 149, .12);
-    border-color: #ff2d95;
-    box-shadow: 0 0 20px rgba(255, 45, 149, .35);
-    transform: translateY(-2px);
-  }
-
-  /* Nút key */
-  .btn-key {
-    background: transparent;
-    color: #ffd9ec;
-    border: 1.5px solid rgba(255, 45, 149, .55);
-  }
-
-  .btn-key:hover {
-    background: rgba(255, 45, 149, .12);
-    border-color: #ff2d95;
-    box-shadow: 0 0 20px rgba(255, 45, 149, .35);
-    transform: translateY(-2px);
-  }
-
-  .divider {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin: 18px 0 14px;
-    color: #5c5057;
+  .footer {
+    margin-top: 25px;
+    color: #ff69b4;
     font-size: 11px;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
+    opacity: 0.6;
     text-transform: uppercase;
   }
 
-  .divider::before,
-  .divider::after {
-    content: "";
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255, 45, 149, .4), transparent);
+  .footer::before,
+  .footer::after {
+    content: '◆';
+    margin: 0 8px;
+    color: #ff1493;
   }
 
-  .note {
-    margin-top: 20px;
-    font-size: 11.5px;
-    color: #7d7079;
-    text-align: center;
-    line-height: 1.6;
-  }
-
-  .note b { color: #ff7ac0; font-weight: 600; }
-
-  /* Toast */
-  .toast {
+  /* Scanline effect */
+  .scanline {
     position: fixed;
-    bottom: 26px;
-    left: 50%;
-    transform: translate(-50%, 80px);
-    background: #141414;
-    border: 1px solid #ff2d95;
-    color: #ffd9ec;
-    padding: 11px 20px;
-    border-radius: 10px;
-    font-size: 13px;
-    box-shadow: 0 0 26px rgba(255, 45, 149, .5);
-    opacity: 0;
-    transition: .35s;
-    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ff1493, transparent);
+    opacity: 0.6;
+    animation: scan 4s linear infinite;
+    z-index: 1;
     pointer-events: none;
   }
 
-  .toast.show {
-    transform: translate(-50%, 0);
-    opacity: 1;
+  @keyframes scan {
+    0% { top: 0; }
+    100% { top: 100%; }
   }
 </style>
 </head>
 <body>
+  <div class="scanline"></div>
+  
+  <div class="container">
+    <div class="logo">💀</div>
+    <h1>HACKER LINK</h1>
+    <p class="subtitle">/// ACCESS POINT ///</p>
 
-  <div class="card">
-    <div class="badge"><span class="dot"></span>System Online</div>
-
-    <h1>HACK TOOL <span>BYPASS</span></h1>
-    <p class="sub">Chọn link bên dưới để truy cập công cụ.</p>
-
-    <!-- LINK CHÍNH -->
-    <span class="label">🔗 Link chính hacker</span>
     <div class="link-box">
-      <input id="mainLink" type="text" readonly
-             value="https://phienchoso.com/9b24774bbce946e42b1c.tk">
-      <button class="copy-btn" onclick="copyLink('mainLink', this)">COPY</button>
+      <div class="link-label">Link Chính</div>
+      <a href="https://phienchoso.com/9b24774bbce946e42b1c.tk" target="_blank" rel="noopener" class="link-btn main-link">
+        🔥 TRUY CẬP NGAY 🔥
+      </a>
     </div>
-    <a class="btn btn-main"
-       href="https://phienchoso.com/9b24774bbce946e42b1c.tk"
-       target="_blank" rel="noopener">
-      ⚡ TRUY CẬP LINK CHÍNH
-    </a>
 
-    <!-- DỰ PHÒNG -->
-    <div class="divider">DỰ PHÒNG</div>
-
-    <span class="label">🛡️ Link dự phòng khi lỗi</span>
     <div class="link-box">
-      <input id="backupLink" type="text" readonly
-             value="https://sitetop.one/dOKXt8">
-      <button class="copy-btn" onclick="copyLink('backupLink', this)">COPY</button>
+      <div class="link-label">Link Dự Phòng</div>
+      <a href="https://sitetop.one/dOKXt8" target="_blank" rel="noopener" class="link-btn backup-link">
+        🛡️ LINK BACKUP 🛡️
+      </a>
     </div>
-    <a class="btn btn-backup"
-       href="https://sitetop.one/dOKXt8"
-       target="_blank" rel="noopener">
-      🔄 TRUY CẬP LINK DỰ PHÒNG
-    </a>
 
-    <!-- LẤY KEY -->
-    <div class="divider">KEY</div>
-
-    <span class="label">🔑 Lấy key</span>
     <div class="link-box">
-      <input id="keyLink" type="text" readonly
-             value="https://no1share.com/s/kfwudg7n">
-      <button class="copy-btn" onclick="copyLink('keyLink', this)">COPY</button>
+      <div class="link-label">Lấy Key</div>
+      <a href="https://traffictop.net/qqJWpE" target="_blank" rel="noopener" class="link-btn key-link">
+        🔑 GET KEY 🔑
+      </a>
     </div>
-    <a class="btn btn-key"
-       href="https://no1share.com/s/kfwudg7n"
-       target="_blank" rel="noopener">
-      🔑 LẤY KEY
-    </a>
 
-    <p class="note">
-      Nếu link chính không mở được, hãy dùng <b>link dự phòng</b>.<br>
-      Copy link và dán vào trình duyệt nếu cần.
-    </p>
+    <div class="footer">SECURE ACCESS</div>
   </div>
-
-  <div class="toast" id="toast">Đã copy link!</div>
-
-<script>
-  function copyLink(inputId, btn) {
-    const input = document.getElementById(inputId);
-    const text = input.value;
-
-    const done = () => {
-      const old = btn.textContent;
-      btn.textContent = '✓ OK';
-      btn.classList.add('done');
-      showToast('Đã copy link!');
-      setTimeout(() => {
-        btn.textContent = old;
-        btn.classList.remove('done');
-      }, 1400);
-    };
-
-    if (navigator.clipboard && window.isSecureContext) {
-      navigator.clipboard.writeText(text).then(done).catch(() => fallback());
-    } else {
-      fallback();
-    }
-
-    function fallback() {
-      input.removeAttribute('readonly');
-      input.select();
-      input.setSelectionRange(0, 99999);
-      try { document.execCommand('copy'); done(); }
-      catch (e) { showToast('Không copy được, hãy copy thủ công'); }
-      input.setAttribute('readonly', true);
-      window.getSelection().removeAllRanges();
-    }
-  }
-
-  function showToast(msg) {
-    const t = document.getElementById('toast');
-    t.textContent = msg;
-    t.classList.add('show');
-    clearTimeout(t._timer);
-    t._timer = setTimeout(() => t.classList.remove('show'), 1800);
-  }
-</script>
-
 </body>
 </html>
