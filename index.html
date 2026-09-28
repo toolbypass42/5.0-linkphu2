@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HACKER ACCESS PANEL</title>
+<title>WEB ACCESS PANEL</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -17,9 +17,10 @@
     align-items: center;
     overflow: hidden;
     position: relative;
+    padding: 20px;
   }
 
-  /* Hiệu ứng nền ma trận */
+  /* Hiệu ứng nền scanline */
   body::before {
     content: '';
     position: absolute;
@@ -36,6 +37,7 @@
     z-index: 1;
   }
 
+  /* Hiệu ứng tối viền */
   body::after {
     content: '';
     position: absolute;
@@ -45,35 +47,95 @@
     z-index: 2;
   }
 
+  /* Hiệu ứng particle hồng bay lên */
+  .particles {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .particles span {
+    position: absolute;
+    bottom: -20px;
+    width: 3px;
+    height: 3px;
+    background: #ff2e88;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #ff2e88, 0 0 16px #ff2e88;
+    animation: rise linear infinite;
+  }
+
+  @keyframes rise {
+    0% { transform: translateY(0) scale(1); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-110vh) scale(0.3); opacity: 0; }
+  }
+
+  .particles span:nth-child(1)  { left: 5%;  animation-duration: 8s;  animation-delay: 0s; }
+  .particles span:nth-child(2)  { left: 15%; animation-duration: 11s; animation-delay: 1s; }
+  .particles span:nth-child(3)  { left: 25%; animation-duration: 9s;  animation-delay: 2s; }
+  .particles span:nth-child(4)  { left: 35%; animation-duration: 13s; animation-delay: 0.5s; }
+  .particles span:nth-child(5)  { left: 45%; animation-duration: 10s; animation-delay: 3s; }
+  .particles span:nth-child(6)  { left: 55%; animation-duration: 12s; animation-delay: 1.5s; }
+  .particles span:nth-child(7)  { left: 65%; animation-duration: 8.5s; animation-delay: 2.5s; }
+  .particles span:nth-child(8)  { left: 75%; animation-duration: 14s; animation-delay: 0.8s; }
+  .particles span:nth-child(9)  { left: 85%; animation-duration: 9.5s; animation-delay: 3.5s; }
+  .particles span:nth-child(10) { left: 95%; animation-duration: 11.5s; animation-delay: 2.2s; }
+
   .panel {
     position: relative;
     z-index: 10;
     width: 100%;
-    max-width: 480px;
+    max-width: 460px;
     padding: 40px 30px;
-    background: rgba(10, 0, 8, 0.9);
+    background: rgba(10, 0, 8, 0.92);
     border: 2px solid #ff2e88;
-    border-radius: 12px;
+    border-radius: 14px;
     box-shadow:
       0 0 15px #ff2e88,
       0 0 40px rgba(255, 46, 136, 0.5),
       inset 0 0 20px rgba(255, 46, 136, 0.15);
     text-align: center;
-    margin: 20px;
     animation: glow 2.5s ease-in-out infinite alternate;
   }
 
   @keyframes glow {
-    from { box-shadow: 0 0 15px #ff2e88, 0 0 40px rgba(255,46,136,0.5), inset 0 0 20px rgba(255,46,136,0.15); }
-    to   { box-shadow: 0 0 25px #ff2e88, 0 0 70px rgba(255,46,136,0.8), inset 0 0 30px rgba(255,46,136,0.3); }
+    from {
+      box-shadow:
+        0 0 15px #ff2e88,
+        0 0 40px rgba(255,46,136,0.5),
+        inset 0 0 20px rgba(255,46,136,0.15);
+    }
+    to {
+      box-shadow:
+        0 0 25px #ff2e88,
+        0 0 70px rgba(255,46,136,0.8),
+        inset 0 0 30px rgba(255,46,136,0.3);
+    }
   }
+
+  /* Góc trang trí */
+  .corner {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ff2e88;
+    box-shadow: 0 0 8px #ff2e88;
+  }
+  .corner.tl { top: -2px; left: -2px; border-right: none; border-bottom: none; border-radius: 12px 0 0 0; }
+  .corner.tr { top: -2px; right: -2px; border-left: none; border-bottom: none; border-radius: 0 12px 0 0; }
+  .corner.bl { bottom: -2px; left: -2px; border-right: none; border-top: none; border-radius: 0 0 0 12px; }
+  .corner.br { bottom: -2px; right: -2px; border-left: none; border-top: none; border-radius: 0 0 12px 0; }
 
   .logo {
     font-size: 26px;
     letter-spacing: 4px;
     font-weight: bold;
     text-shadow: 0 0 10px #ff2e88, 0 0 20px #ff2e88;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
     animation: flicker 3s infinite;
   }
 
@@ -85,22 +147,26 @@
   .subtitle {
     font-size: 12px;
     color: #ff7ab8;
-    letter-spacing: 2px;
-    margin-bottom: 30px;
-    opacity: 0.8;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    opacity: 0.85;
   }
+
+  .subtitle::before { content: '[ '; }
+  .subtitle::after  { content: ' ]'; }
 
   .divider {
     height: 1px;
     background: linear-gradient(90deg, transparent, #ff2e88, transparent);
-    margin: 20px 0;
+    margin: 22px 0;
+    box-shadow: 0 0 6px #ff2e88;
   }
 
   .btn {
     display: block;
     width: 100%;
-    padding: 14px;
-    margin: 12px 0;
+    padding: 15px 14px;
+    margin: 14px 0;
     background: linear-gradient(90deg, #1a0010, #2a0018);
     color: #ff2e88;
     border: 1.5px solid #ff2e88;
@@ -108,7 +174,7 @@
     font-family: 'Courier New', monospace;
     font-size: 14px;
     font-weight: bold;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.8px;
     text-decoration: none;
     text-transform: uppercase;
     cursor: pointer;
@@ -121,8 +187,11 @@
   .btn:hover {
     background: #ff2e88;
     color: #000;
-    box-shadow: 0 0 25px #ff2e88, 0 0 50px rgba(255, 46, 136, 0.7);
+    box-shadow:
+      0 0 25px #ff2e88,
+      0 0 50px rgba(255, 46, 136, 0.7);
     transform: translateY(-2px);
+    letter-spacing: 2.5px;
   }
 
   .btn:active {
@@ -137,19 +206,25 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-    transition: left 0.5s;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+    transition: left 0.55s;
   }
 
   .btn:hover::before {
     left: 100%;
   }
 
+  .btn .icon {
+    display: inline-block;
+    margin-right: 8px;
+    font-size: 13px;
+  }
+
   .footer {
-    margin-top: 25px;
+    margin-top: 26px;
     font-size: 10px;
     color: #ff2e88;
-    opacity: 0.5;
+    opacity: 0.55;
     letter-spacing: 2px;
   }
 
@@ -162,36 +237,48 @@
     margin-right: 6px;
     box-shadow: 0 0 8px #ff2e88;
     animation: blink 1s infinite;
+    vertical-align: middle;
   }
 
   @keyframes blink {
     0%, 100% { opacity: 1; }
-    50% { opacity: 0.2; }
+    50% { opacity: 0.15; }
+  }
+
+  /* Responsive */
+  @media (max-width: 480px) {
+    .panel { padding: 30px 20px; }
+    .logo  { font-size: 22px; letter-spacing: 3px; }
+    .btn   { font-size: 12.5px; padding: 13px 10px; }
   }
 </style>
 </head>
 <body>
 
+  <!-- Particles nền -->
+  <div class="particles">
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+
   <div class="panel">
-    <div class="logo">HACKER ACCESS</div>
-    <div class="subtitle">[ SYSTEM ONLINE ]</div>
+    <!-- Góc trang trí -->
+    <div class="corner tl"></div>
+    <div class="corner tr"></div>
+    <div class="corner bl"></div>
+    <div class="corner br"></div>
+
+    <div class="logo">WEB ACCESS</div>
+    <div class="subtitle">SYSTEM ONLINE</div>
 
     <div class="divider"></div>
 
     <a href="https://phienchoso.com/9b24774bbce946e42b1c.tk" class="btn" target="_blank" rel="noopener">
-      ► LINK CHÍNH
+      <span class="icon">►</span> LINK CHÍNH WEB
     </a>
 
-    <a href="https://sitetop.one/dOKXt8" class="btn" target="_blank" rel="noopener">
-      ► LINK DỰ PHÒNG
-    </a>
-
-    <a href="https://traffictop.net/qqJWpE" class="btn" target="_blank" rel="noopener">
-      ► LẤY KEY
-    </a>
-
-    <a href="https://phienchoso.com/68b38364534b9ff2866a.tk" class="btn" target="_blank" rel="noopener">
-      ► BOT TELEGRAM
+    <a href="https://sitetop.one/UkVqko" class="btn" target="_blank" rel="noopener">
+      <span class="icon">►</span> LINK DỰ PHÒNG
     </a>
 
     <div class="divider"></div>
